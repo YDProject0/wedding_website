@@ -81,3 +81,23 @@ function postComment(data) {
 function resetList(){
     document.querySelector('.comment-list').innerHTML = ``;
 }
+
+// Copy Bank to clipboard
+$('.copy-no').on("click", function(){
+    var value = $("#no-rek-text").text();
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val(value).select();
+    document.execCommand("copy");
+    $temp.remove();
+})
+
+// Copy address to clipboard
+$('.copy-address').on("click", function(){
+    var value = $("#address-text").text();
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val(value).select();
+    document.execCommand("copy");
+    $temp.remove();
+})
