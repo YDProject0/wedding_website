@@ -13,9 +13,10 @@ html,
 body {
     margin:0;
     padding:0;
-    height:100%;
+    min-height:100%;
     font-family: $primary-font;
     color: $black;
+    background-color: #F2F2F2;
 }
 
 .subtitle {
@@ -24,4 +25,545 @@ body {
 
 .accent-font {
     font-family: $accent-font;
+}
+
+.section-heading  {
+    font-family: $accent-font;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: $sizing-standard * 7;
+
+    @include small-mobile {
+        font-size: 28px;
+    }
+}
+
+#heading {
+    position: relative;
+    height: 100vh;
+
+    .background {
+        @include absolute-fill;
+        z-index: 0;
+
+        .bg-heading {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .mask {
+            @include absolute-fill;
+
+            width: 100%;
+            height: 100%;
+            background-color: $gray-1;
+            opacity: 60%;
+        }
+
+    }
+
+    .content {
+        z-index: 1;
+        @include large {
+            width: 50%;
+        }
+        
+        @include small-mobile {
+            width: 100%;
+        }
+
+        h6 {
+            font-family: $secondary-font;
+            font-size: 18px;
+
+            @include small-mobile {
+                font-size: 14px;
+            }
+        }
+
+        h1 {
+            font-family: $accent-font;
+            font-size: 96px;
+
+            @include small-mobile {
+                font-size: 52px;
+            }
+        }
+
+        .separator {
+            position: relative;
+            font-family: $secondary-font;
+            font-size: 16px;
+
+            @include small-mobile {
+                font-size: 14px;
+            }
+
+            &::before{
+                content: "";
+                display: block;
+                width: 35%;
+                height: 1px;
+                background: $gray-4;
+                left: 0;
+                top: 50%;
+                position: absolute;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                width: 35%;
+                height: 1px;
+                background: $gray-4;
+                right: 0;
+                top: 50%;
+                position: absolute;
+            }
+        }
+
+        .date {
+            font-family: $secondary-font;
+            font-size: 36px;
+            font-weight: $font-bold;
+            margin-bottom: $sizing-standard * 8;
+
+            @include small-mobile {
+                font-size: 20px;
+            }
+        }
+
+        .caption {
+            font-size: 18px;
+
+            @include small-mobile {
+                font-size: 14px;
+            }
+        }
+
+        .name {
+            font-size: 24px;
+            text-transform: uppercase;
+            font-weight: $font-bold;
+
+            @include small-mobile {
+                font-size: 148x;
+            }
+        }
+
+        .invitation-btn {
+            font-size: 18px;
+            color: white;
+            padding: $sizing-standard 50px;
+            background-color: transparent;
+            border: solid 1px $gray-4;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                background-color: white;
+                color: $black;
+            }
+        }
+    }
+}
+
+#bride {
+    padding: $sizing-standard * 15 0;
+
+    .col-12 {
+        &:first-child {
+            @include small-mobile{
+                margin-bottom: $sizing-standard * 15;
+            }
+        }
+    }
+
+    .identity {
+        padding: $sizing-standard * 4 0;
+        height: max-content;
+        border-top: 2px solid $black;
+        border-bottom: 2px solid $black;
+
+        @include tablet {
+            max-width: 260px;
+        }
+
+        @include small-mobile {
+            max-width: 260px;
+        }
+        
+        h2 {
+            font-family: $accent-font;
+            font-size: 48px;
+            margin-bottom: $sizing-standard * 4;
+
+            @include small-mobile {
+                font-size: 36px;
+            }
+        }
+
+        .family  {
+            font-family: $secondary-font;
+            font-size: 18px;
+            font-weight: $font-bold;
+        }
+
+        &:first-child{
+            margin-right: $sizing-standard * 5;            
+
+            @include tablet {
+                margin-right: 0;
+            }
+            
+            @include small-mobile {
+                margin-right: 0;
+            }
+        }
+
+        &:last-child {
+            margin-left: $sizing-standard * 5;
+
+            @include tablet {
+                margin-left: 0;
+            }
+
+            @include small-mobile {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .photo-container {
+        width: min-content;
+        @include tablet {
+            margin-bottom: $sizing-standard * 5;
+        }
+
+        @include small-mobile {
+            margin-bottom: $sizing-standard * 5;
+        }
+
+        .name {
+            font-family: $accent-font;
+            font-size: 36px;
+        }
+
+        .photo {
+            display: block;
+            width: 260px;
+            height: 400px;
+            object-fit: cover;
+        }
+    }
+}
+
+#address {
+    padding: $sizing-standard * 15 0;
+    background-color: $black;
+
+    .cap {
+        width: 75%;
+        font-family: $secondary-font;
+        font-size: 16px;
+        line-height: 140%;
+        font-weight: $font-light;
+        margin-bottom: $sizing-standard * 6;
+
+        @include tablet {
+            width: 80%;
+        }
+
+        @include small-mobile {
+            width: 100%;
+        }
+    }
+
+
+    .location {
+        background-color: white;
+        padding: $sizing-standard * 6;
+        transition: .3s ease-in-out;
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .clock {
+            content: url("../../images/clock.svg") ;
+        }
+
+        .glass {
+            content: url("../../images/glass.svg") ;
+        }
+
+        .diamond {
+            content: url("../../images/diamond.svg") ;
+        }
+
+        h2 {
+            font-family: $secondary-font;
+            font-size: 24px;
+            color: $gray-2;
+        }
+
+        p {
+            font-family: $secondary-font;
+            font-size: 18px;
+            color: $gray-2;
+        }
+
+        // location hover
+        &:hover {
+            background-color: $gray-1;
+            h2,p {
+                color: white;
+            }
+                
+        }
+    }
+
+    .map {
+        height: 400px;
+        object-fit: cover;
+    }
+}
+
+#caption {
+    position: relative;
+    padding: $sizing-standard * 15 0;
+    height: 100%;
+
+    .caption-img {
+        width: 100%;
+        object-fit: contain;
+        @include small-mobile {
+            display: none;
+        }
+    }
+
+    .content {
+        font-size: 20px;
+        line-height: 140%;
+    }
+
+    .surat {
+        font-size: 18px;
+        font-weight: $font-bold;
+    }
+
+    .decor-wrapper {
+        position: absolute;
+        right: $sizing-standard * 5;
+        top: 62%;
+
+        .decor-img {
+            width: 160px;
+            object-fit: contain;
+        }
+
+        @include small-mobile {
+            right: $sizing-standard * 2;
+            top:65%; 
+
+            .decor-img {
+                width: 65px;
+                object-fit: contain;
+            }
+        }
+    }
+
+}
+
+#gallery {
+    padding: $sizing-standard * 15 0;
+    .wrapper {
+        width: 83%;
+        @include tablet {
+            width: 100%;
+        }
+        @include small-mobile {
+            width: 100%;
+        }
+        .photos {
+            background-color: $gray-5;
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 310;
+        }
+    }
+}
+
+#gift {
+    position: relative;
+    min-height: 100vh;
+    padding: $sizing-standard * 15 0;
+
+    @include tablet {
+        min-height: 100%;
+    }
+
+    .background {
+        @include absolute-fill;
+        z-index: 0;
+
+        .gift-background-section {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+
+        .wrapper {
+            margin-bottom: $sizing-standard * 8;
+
+            .transfer,.send {
+                width: 50%;
+
+                @include small-mobile {
+                    width: 100%;
+                }
+            }
+
+            .transfer {
+                border-right: 2px solid $gray-4;
+
+                @include small-mobile {
+                    border-right: 0;
+                    border-bottom: 2px solid $gray-4;
+                    padding-bottom: $sizing-standard * 5;
+                }
+            }
+
+            .send {
+                @include small-mobile {
+                    padding-top: $sizing-standard * 5;
+                }
+            }
+
+
+            h2 {
+                font-family: $secondary-font;
+                font-size: 32px;
+            }
+
+            .icon {
+                width: 80px;
+                object-fit: contain;
+            }
+
+            h3 {
+                font-family: $secondary-font;
+                font-size: 24px;
+                font-weight: $font-bold;
+            }
+
+            .hr {
+                width: 30%;
+                height: 1px;
+                background-color: white;
+            }
+
+            button {
+                font-size: 18px;
+                color: white;
+                padding: $sizing-standard 50px;
+                background-color: transparent;
+                border: solid 1px $gray-4;
+                transition: .3s ease-in-out;
+
+                &:hover {
+                    background-color: white;
+                    color: $black;
+                }
+            }
+        }
+
+        .other {
+            width: 60%;
+            font-family: $secondary-font;
+            font-size: 20px;
+
+            @include small-mobile {
+                width: 100%;
+            }
+        }
+
+    }
+}
+
+#greetings {
+    min-height: 100vh;
+    padding: $sizing-standard * 15 0;
+
+    @include tablet {
+        min-height: 100%;
+    }
+
+    form {
+        .name,.greeting-content {
+            padding: $sizing-standard / 2 $sizing-standard * 3;
+            font-family: $secondary-font;
+            font-size: 24px;
+        }
+
+        button {
+            font-family: $secondary-font;
+            font-size: 24px;
+            background-color: $gray-1;
+            color: white;
+            padding: $sizing-standard / 2 $sizing-standard * 7;
+
+        }
+    }
+
+    .comment-scetion {
+        @include small-mobile {
+            margin-top: $sizing-standard * 5;
+        }
+
+        h3 {
+            font-family: $secondary-font;
+            font-size: 24px;
+            font-weight: $font-bold;
+            color: $black;
+        }
+
+        .hr {
+            width: 100%;
+            height: 2px;
+            background-color: $gray-1;
+        }
+
+        .name {
+            font-family: $secondary-font;
+            font-size: 24px;
+            font-weight: $font-medium;
+            text-transform: capitalize;
+        }
+
+        .timestamp {
+            font-family: $secondary-font;
+            font-size: 16px;
+            color: $gray-2; 
+        }
+
+        .content-text {
+            font-family: $secondary-font;
+            font-size: 20px;
+            color: $black;
+        }
+
+    }
+
 }
