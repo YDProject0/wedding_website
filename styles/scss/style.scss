@@ -293,15 +293,15 @@ body {
         }
 
         .clock {
-            content: url("../../images/clock.svg") ;
+            content: url("images/clock.svg") ;
         }
 
         .glass {
-            content: url("../../images/glass.svg") ;
+            content: url("images/glass.svg") ;
         }
 
         .diamond {
-            content: url("../../images/diamond.svg") ;
+            content: url("images/diamond.svg") ;
         }
 
         h2 {
@@ -400,7 +400,6 @@ body {
 
 #gift {
     position: relative;
-    min-height: 100vh;
     padding: $sizing-standard * 15 0;
 
     @include tablet {
@@ -503,7 +502,6 @@ body {
 }
 
 #greetings {
-    min-height: 100vh;
     padding: $sizing-standard * 15 0;
 
     @include tablet {
