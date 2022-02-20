@@ -101,3 +101,7 @@ $('.copy-address').on("click", function(){
     document.execCommand("copy");
     $temp.remove();
 })
+
+$('.invitation-btn').on("click", function(){
+    document.getElementById("overlay").style.display = "none";
+})
